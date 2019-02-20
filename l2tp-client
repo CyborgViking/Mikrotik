@@ -1,0 +1,2 @@
+/interface l2tp-client add name=l2tp-main_office connect-to=10.10.10.1 user=filial password=1 disabled=no allow=mschap2
+/ip route add dst-address=192.168.36.0/24 gateway=l2tp-main_office

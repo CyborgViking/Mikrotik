@@ -1,0 +1,6 @@
+/user add name=itguru group=full address=192.168.31.0/24,192.168.32.0/24 password=5ssQxABqA46LkpJE
+/user remove admin
+/system script add name=autoupdate source={/system package update {set channel=current; check-for-updates once; :delay 1s; :if ( [get status] = "New version is available") do={ install }}}
+/system scheduler add name=autoupdate_every_week interval=7d start-time=2:00:00 start-date=oct/14/2018 on-event={/system script run autoupdate}
+/file remove [find where size > 0]
+/system package update {set channel=current; check-for-updates once; :delay 1s; :if ( [get status] = "New version is available") do={ install }}}

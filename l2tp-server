@@ -1,0 +1,4 @@
+/interface l2tp-server server set authentication=mschap2 enabled=yes
+/ppp secret add name=filial password=1 profile=default-encryption local-address=10.0.0.1 remote-address=10.0.0.2 service=l2t
+/interface l2tp-server add name=l2tp-filial user=test
+/ip route add dst-address=192.168.1.0/24 gateway=l2tp-filial
